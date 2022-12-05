@@ -47,7 +47,7 @@ public class WebFluxController {
         Todo todo = new Todo();
         todo.setId(id);
         todo.setComment(comment);
-        return todoRepo.save(todo).doOnNext(tod -> LOGGER.info("Saved todo: {}", tod));
+        return todoRepo.addNewRecord(id, comment).doOnNext(tod -> LOGGER.info("Saved todo: {}", tod));
     }
 
 }
